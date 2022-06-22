@@ -6,7 +6,7 @@
             "id": "837f93ae-a870-4fc5-8ca6-586ac6b442ee",
             "actions": [
                 {
-                    "name": "New action",
+                    "name": "Spacebar",
                     "type": "Button",
                     "id": "1c46e3e1-78c2-44e4-95c4-1260a5e55ac0",
                     "expectedControlType": "Button",
@@ -23,7 +23,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "New action",
+                    "action": "Spacebar",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -34,7 +34,7 @@
             "id": "f5aa1ab6-9623-4da9-a52e-d7becf968d6f",
             "actions": [
                 {
-                    "name": "New action",
+                    "name": "Click",
                     "type": "Button",
                     "id": "dd019e93-6f2d-47af-8f60-3d817b8b91b3",
                     "expectedControlType": "Button",
@@ -51,7 +51,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "New action",
+                    "action": "Click",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -509,7 +509,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: c5a068fea440b0f4dbc628649d5fd236, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -839,14 +839,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 316253559}
-  m_LocalRotation: {x: -0, y: -0, z: 0.018237427, w: -0.99983376}
-  m_LocalPosition: {x: -5.229146, y: 1.6628398, z: -0.21509722}
-  m_LocalScale: {x: 0.7111, y: 0.7111, z: 0.7111}
+  m_LocalRotation: {x: 0, y: 0, z: -0.92387956, w: 0.38268343}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 598155987}
+  m_Father: {fileID: 2000317298}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -2.09}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -135}
 --- !u!1 &410277891
 GameObject:
   m_ObjectHideFlags: 0
@@ -880,7 +880,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 598155987}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &410277893
 SpriteRenderer:
@@ -1527,7 +1527,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 316253561}
   - {fileID: 1152669680}
   - {fileID: 1901165222}
   - {fileID: 410277892}
@@ -3664,7 +3663,7 @@ Transform:
   - {fileID: 194854733}
   - {fileID: 2000317298}
   m_Father: {fileID: 598155987}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1152669681
 MonoBehaviour:
@@ -4806,7 +4805,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 598155987}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1901165223
 SpriteRenderer:
@@ -5572,6 +5571,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2000317298}
+  - component: {fileID: 2000317299}
   m_Layer: 6
   m_Name: WeaponHolder
   m_TagString: Untagged
@@ -5590,10 +5590,24 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 316253561}
   m_Father: {fileID: 1152669680}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2000317299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2000317297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3620f986dfca7d64aa2777539ad38b05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parent: {fileID: 0}
 --- !u!1 &2039429952
 GameObject:
   m_ObjectHideFlags: 0

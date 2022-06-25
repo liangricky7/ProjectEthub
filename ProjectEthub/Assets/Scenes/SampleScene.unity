@@ -774,6 +774,7 @@ GameObject:
   - component: {fileID: 316253561}
   - component: {fileID: 316253560}
   - component: {fileID: 316253562}
+  - component: {fileID: 316253563}
   m_Layer: 0
   m_Name: sword
   m_TagString: Untagged
@@ -868,6 +869,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &316253563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 316253559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3356bc394aac5d449869f99f8d96638e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stats: {fileID: 11400000, guid: c0c3d2cb90fd441418d2829ef81f4a34, type: 2}
 --- !u!1 &410277891
 GameObject:
   m_ObjectHideFlags: 0
@@ -3638,6 +3652,7 @@ GameObject:
   - component: {fileID: 1152669678}
   - component: {fileID: 1152669681}
   - component: {fileID: 1152669682}
+  - component: {fileID: 1152669683}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -3725,15 +3740,27 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: 1c46e3e1-78c2-44e4-95c4-1260a5e55ac0
-    m_ActionName: Dash/New action[/Keyboard/space]
+    m_ActionId: eccecc37-c4fd-4deb-a912-b7697402510d
+    m_ActionName: Player/InitDash[/Keyboard/space]
   - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: dd019e93-6f2d-47af-8f60-3d817b8b91b3
-    m_ActionName: Attack/New action[/Mouse/leftButton]
+      m_Calls:
+      - m_Target: {fileID: 1152669683}
+        m_TargetAssemblyTypeName: PlayeAttack, Assembly-CSharp
+        m_MethodName: Attack
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 4a7c8038-3351-42b5-94c1-985a8a209af7
+    m_ActionName: Player/Attack[/Mouse/leftButton]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: InitDash
+  m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!50 &1152669682
@@ -3757,6 +3784,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!114 &1152669683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1152669676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16cb5ac4ef133bd4096080f67a628cd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapon: {fileID: 0}
 --- !u!1001 &1286884790
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3953,7 +3993,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7030016, y: 1}
+    m_SensorSize: {x: 1.6914557, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -5625,6 +5665,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2000317298}
   - component: {fileID: 2000317299}
+  - component: {fileID: 2000317300}
   m_Layer: 6
   m_Name: WeaponHolder
   m_TagString: Untagged
@@ -5661,6 +5702,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
+--- !u!114 &2000317300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2000317297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afc5e5328ced5c94792f00de09004d5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapon: {fileID: 316253563}
 --- !u!1 &2039429952
 GameObject:
   m_ObjectHideFlags: 0

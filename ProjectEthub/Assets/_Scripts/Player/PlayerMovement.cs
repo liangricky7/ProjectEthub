@@ -36,6 +36,10 @@ public class PlayerMovement : MonoBehaviour
         mousePos = Input.mousePosition;
         mousePos.z = 5.23f;
         Look();
+
+        if (Input.GetButtonDown("Dash")) {
+            InitDash();
+        }
     }
 
     private void FixedUpdate() {

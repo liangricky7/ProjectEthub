@@ -15,11 +15,18 @@ public class RotateAboutTarget : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         direction = cam.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+        direction.Normalize();
         angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, 3f);
+        transform.rotation = Quaternion.Euler(0f, 0f, angle);
+        if (angle > 90 || angle < -90) {
+            if (parent.transform.eulerAngles.y == 0) {
+                transform.localRotation = Quaternion.Euler(180, 0, -angle);
+            } else if (parent.transform.eulerAngles.y == 180) {
+                transform.localRotation = Quaternion.Euler(180, 180, -angle);
+            }
+        }
     }
 }

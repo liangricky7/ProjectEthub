@@ -15,3 +15,7 @@ MonoBehaviour:
   name: Sword
   damage: 3
   sprite: {fileID: 0}
+  attackRange: 0
+  enemyLayers:
+    serializedVersion: 2
+    m_Bits: 128

@@ -7,8 +7,13 @@ public class PlayeAttack : MonoBehaviour
     private void Start() {
         weapon = transform.Find("WeaponHolder").GetComponent<WeaponHolder>().weapon;
     }
+
+    private void Update() {
+        if (Input.GetButtonDown("Fire1")) {
+            Attack();
+        }
+    }
     public void Attack() {
-        Debug.Log("attacking");
         weapon.Attack();
     }
 }

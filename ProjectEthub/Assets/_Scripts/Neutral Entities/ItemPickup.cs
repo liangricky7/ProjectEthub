@@ -1,9 +1,16 @@
 using UnityEngine;
-using UnityEngine.UI;
 public class ItemPickup : Interactable {
     private bool canBeInteractedWith = false;
     public Item item;
-    
+    private SpriteRenderer render;
+    private void Start() {
+        render = gameObject.GetComponent<SpriteRenderer>();
+        render.sprite = item.icon;
+    }
+    public void Initialize(Item newItem) {
+        item = newItem;
+    }
+
     private void Update() {
         if (Input.GetKeyDown("e") && canBeInteractedWith) {
             Interact();
@@ -25,5 +32,8 @@ public class ItemPickup : Interactable {
         if (collider.tag == "Player") {
             canBeInteractedWith = false;
         }
+    }
+    private void OnCollisionEnter2D(Collision2D collider) {
+        Interact();
     }
 }

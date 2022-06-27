@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bea4bcebd83ad374dab7830753b361ce, type: 3}
   m_Name: Beau
   m_EditorClassIdentifier: 
-  name: Item name
-  icon: {fileID: 0}
+  name: beau
+  icon: {fileID: 21300000, guid: 9ce0cbb739452d54ca8cca429d95a2e9, type: 3}
   isStackable: 1

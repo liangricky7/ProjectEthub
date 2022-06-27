@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Sword
   m_EditorClassIdentifier: 
   name: Sword
-  damage: 3
+  damage: 1
   sprite: {fileID: 0}
-  attackRange: 0
+  attackRange: 0.5
   enemyLayers:
     serializedVersion: 2
     m_Bits: 128

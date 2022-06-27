@@ -6,4 +6,7 @@ public class EnemyStats : ScriptableObject
     public float health;
     public Item[] drops;
     public float damage;
+    public float speed;
+    public bool isArmored;
+    public float armor;
 }

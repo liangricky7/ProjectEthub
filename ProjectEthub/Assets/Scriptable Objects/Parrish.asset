@@ -17,6 +17,8 @@ MonoBehaviour:
   drops:
   - {fileID: 11400000, guid: 5c3c3082e1c14f2499eb6ace4756a261, type: 2}
   damage: 1
-  speed: 8
+  speed: 6
   isArmored: 0
   armor: 0
+  aggroDistance: 3
+  attackDistance: 10

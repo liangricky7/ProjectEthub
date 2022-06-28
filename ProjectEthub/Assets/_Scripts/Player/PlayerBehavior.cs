@@ -1,18 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerBehavior : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    public float health = 100;
+    public void TakeDamage(float damage) {
+        health -= damage;
+        if (health < 0) {
+            Die();    
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    private void Die() {
+        Debug.Log("player died");
     }
 }

@@ -9,4 +9,7 @@ public class EnemyStats : ScriptableObject
     public float speed;
     public bool isArmored;
     public float armor;
+
+    public float aggroDistance;
+    public float attackDistance;
 }

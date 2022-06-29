@@ -39,7 +39,6 @@ public class WindSlasherActions : MonoBehaviour
     void Update()
     {
         distanceFromTarget = Vector3.Distance(transform.position, target.transform.position);
-        Debug.Log(distanceFromTarget);
         if (!inAttackMode && distanceFromTarget <= attackDistance) {
             EnterAttack();
         } else if (distanceFromTarget <= aggroDistance) {

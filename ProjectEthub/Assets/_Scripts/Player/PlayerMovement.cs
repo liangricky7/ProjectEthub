@@ -1,6 +1,6 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -19,6 +19,16 @@ public class PlayerMovement : MonoBehaviour
     private bool isDashing = false;
     private float dashingTime = 0.3f;
 
+    public InputAction playerControls;
+
+    private void OnEnable() {
+        playerControls.Enable();
+    }
+
+    private void OnDisable() {
+        playerControls.Disable();
+    }
+
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
@@ -29,17 +39,11 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        float horizontal = Input.GetAxisRaw("Horizontal");
-        float vertical = Input.GetAxisRaw("Vertical");
-        direction = new Vector2(horizontal, vertical).normalized;
+        direction = playerControls.ReadValue<Vector2>();
 
-        mousePos = Input.mousePosition;
+        mousePos = cam.ScreenToViewportPoint(Mouse.current.position.ReadValue());
         mousePos.z = 5.23f;
         Look();
-
-        if (Input.GetButtonDown("Dash")) {
-            InitDash();
-        }
     }
 
     private void FixedUpdate() {

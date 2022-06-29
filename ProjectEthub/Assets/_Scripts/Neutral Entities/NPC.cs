@@ -10,12 +10,10 @@ public class NPC : Interactable {
         DManager = FindObjectOfType<DialogueManager>();
     }
 
-    private void Update() {
-        if (Input.GetKeyDown("e") && canBeInteractedWith) {
-            Interact();
-        }
-    }
     public override void Interact() { //speaking and shit
+        if (!canBeInteractedWith) {
+            return;
+        }
         if (DManager.inDialogue == false) {
             DManager.StartDialogue(gameObject.GetComponent<Dialogue>());
         } else {

@@ -6,9 +6,6 @@ public class InventorySlot : MonoBehaviour {
     Item item;
     public Image icon;
     public TextMeshProUGUI countText;
-    public void Awake() {
-
-    }
 
     public void AddItem(Item newItem, int count) {
         item = newItem;

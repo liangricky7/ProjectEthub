@@ -1,6 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class RotateAboutTarget : MonoBehaviour
 {
@@ -17,7 +16,7 @@ public class RotateAboutTarget : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        direction = cam.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+        direction = cam.ScreenToViewportPoint(Mouse.current.position.ReadValue()) - transform.position;
         direction.Normalize();
         angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0f, 0f, angle);

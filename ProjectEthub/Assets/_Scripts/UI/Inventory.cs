@@ -35,7 +35,6 @@ public class Inventory : MonoBehaviour {
             bool needsNewSlot = true;
             for (int i = 0; i < items.Count; i++) { //looks for a slot to stack an item onto
                 if (items[i] == item) {
-
                     Debug.Log("stacked an " + item.name);
                     count[i] += 1;
                     if (onItemChangedCallback != null) {

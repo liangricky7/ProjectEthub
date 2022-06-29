@@ -10,12 +10,6 @@ public class ItemPickup : Interactable {
     public void Initialize(Item newItem) {
         item = newItem;
     }
-
-    private void Update() {
-        if (Input.GetKeyDown("e") && canBeInteractedWith) {
-            Interact();
-        }
-    }
     public override void Interact() {
         Debug.Log("picked up a " + item.name);
         bool wasPickedUp = Inventory.instance.Add(item);

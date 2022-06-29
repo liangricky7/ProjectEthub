@@ -20,5 +20,5 @@ MonoBehaviour:
   speed: 6
   isArmored: 0
   armor: 0
-  aggroDistance: 3
-  attackDistance: 10
+  aggroDistance: 8
+  attackDistance: 3

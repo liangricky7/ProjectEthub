@@ -55,18 +55,23 @@ public class WindSlasherActions : MonoBehaviour
     }
 
     IEnumerator Patrol() {
+        yield return new WaitForSeconds(Random.Range(1f, 2f));
         FindPatrolPoint();
         while (transform.position != patrolPoint) {
             transform.position = Vector2.MoveTowards(transform.position, patrolPoint, speed * Time.deltaTime);
             yield return null;
         }
-        yield return new WaitForSeconds(Random.Range(1f, 2f));
+        
         isPatrolling = false;
     }
     private void FindPatrolPoint() {
         patrolPoint = new Vector2(transform.position.x + Random.Range(-patrolRange, patrolRange), transform.position.y + Random.Range(-patrolRange, patrolRange));
     }
     private void Chase() {
+        if (isPatrolling) {
+            StopCoroutine(currCo);
+            isPatrolling = false;
+        }
         transform.position = Vector2.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
     }
 

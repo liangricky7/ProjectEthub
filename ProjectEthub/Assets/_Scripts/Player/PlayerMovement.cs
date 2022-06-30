@@ -41,7 +41,7 @@ public class PlayerMovement : MonoBehaviour
     {
         direction = playerControls.ReadValue<Vector2>();
 
-        mousePos = cam.ScreenToViewportPoint(Mouse.current.position.ReadValue());
+        mousePos = cam.ScreenToWorldPoint(Mouse.current.position.ReadValue());
         mousePos.z = 5.23f;
         Look();
     }
@@ -51,7 +51,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void Look() {
-        Vector3 lookDir = mousePos - cam.WorldToScreenPoint(transform.position);
+        Vector3 lookDir = mousePos - transform.position;
         float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
         if (angle > 90 || angle < -90) {
             render.flipX = true;

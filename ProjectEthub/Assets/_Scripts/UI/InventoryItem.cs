@@ -1,25 +1,28 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class InventoryItem : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler
-{
+public class InventoryItem : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler {
+    
+    private RectTransform rectTransform;
+
+    [SerializeField]
+    private Canvas canvas;
+
+    private void Awake() {
+        rectTransform = transform as RectTransform;
+    }
+
     public void OnBeginDrag(PointerEventData eventData) {
-        Debug.Log("onBeginDrag");
     }
 
     public void OnDrag(PointerEventData eventData) {
-        Debug.Log("onDrag");
-
+        rectTransform.anchoredPosition += (eventData.delta/canvas.scaleFactor); //increments the object position and makes sure canvas scale doesnt mess up the increment
     }
 
     public void OnEndDrag(PointerEventData eventData) {
-        Debug.Log("onEndDrag");
-
     }
 
     public void OnPointerDown(PointerEventData eventData) {
-        Debug.Log("onPointerDown");
+        Debug.Log("pointed down");
     }
 }

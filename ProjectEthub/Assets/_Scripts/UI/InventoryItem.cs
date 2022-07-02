@@ -4,6 +4,7 @@ using UnityEngine.EventSystems;
 public class InventoryItem : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler {
     
     private RectTransform rectTransform;
+    private CanvasGroup canvasGroup;
 
     [SerializeField]
     private Canvas canvas;
@@ -13,6 +14,7 @@ public class InventoryItem : MonoBehaviour, IPointerDownHandler, IBeginDragHandl
     }
 
     public void OnBeginDrag(PointerEventData eventData) {
+        canvasGroup.blocksRaycasts = false;
     }
 
     public void OnDrag(PointerEventData eventData) {
@@ -23,6 +25,6 @@ public class InventoryItem : MonoBehaviour, IPointerDownHandler, IBeginDragHandl
     }
 
     public void OnPointerDown(PointerEventData eventData) {
-        Debug.Log("pointed down");
+        canvasGroup.blocksRaycasts = true;
     }
 }

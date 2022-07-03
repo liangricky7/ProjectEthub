@@ -73,4 +73,28 @@ public class Inventory : MonoBehaviour {
         }
         return true;
     }
+
+    public void Remove(Item item) {
+        if (item.isStackable) {
+            for (int i = 0; i < items.Count; i++) { //looks for a slot to stack an item onto
+                if (items[i] == item) {
+                    Debug.Log("removed an " + item.name);
+                    count[i] -= 1;
+                    if (count[i] <= 0) {
+                        items.Remove(item);
+                    }
+                    if (onItemChangedCallback != null) {
+                        onItemChangedCallback.Invoke();
+                    }
+                }
+            }
+
+        } else {
+            items.Remove(item);
+            Debug.Log("removed an unstackable " + item.name);
+            if (onItemChangedCallback != null) {
+                onItemChangedCallback.Invoke();
+            }
+        }
+    }
 }

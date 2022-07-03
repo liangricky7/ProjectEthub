@@ -15,6 +15,7 @@ public class UIManager : MonoBehaviour {
     public void openInventory() {
         InventoryCanvas.alpha = (InventoryCanvas.alpha == 0 ? 1 : 0); //if alpha is 0 set to 1 else set to 0
         InventoryCanvas.interactable = !InventoryCanvas.interactable;
+        InventoryCanvas.blocksRaycasts = !InventoryCanvas.blocksRaycasts;
     }
 
     private void OpenUI() {

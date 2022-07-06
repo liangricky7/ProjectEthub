@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Sword
   m_EditorClassIdentifier: 
   name: Sword
-  damage: 1
+  damage: 5
   sprite: {fileID: 0}
   attackRange: 1
   enemyLayers:

@@ -10,7 +10,6 @@ public class ChargerActions : MonoBehaviour {
 
     private bool inAttackMode = false;
 
-
     private float distanceFromTarget;
     private float aggroDistance;
     private float attackDistance;

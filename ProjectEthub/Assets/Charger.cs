@@ -2,9 +2,11 @@ using UnityEngine;
 
 public class Charger : Enemy {
     public EnemyStats stats;
+    [HideInInspector]
+    public float health;
     private float iFrameLength;
     private float nextTimeCanDamage;
-    public float health;
+
     private GameObject itemPickup;
 
     void Start() {

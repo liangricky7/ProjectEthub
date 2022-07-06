@@ -15,10 +15,11 @@ MonoBehaviour:
   name: Charger
   health: 20
   drops: []
-  damage: 3
+  damage: 10
   speed: 5
   isArmored: 0
   armor: 0
   chargeSpeed: 10
+  chargeDamage: 20
   aggroDistance: 15
   attackDistance: 14

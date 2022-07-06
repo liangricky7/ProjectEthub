@@ -10,15 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3d5c50b427289f746aa20709a0feb9e3, type: 3}
-  m_Name: Parrish
+  m_Name: Enemy
   m_EditorClassIdentifier: 
-  name: Parrish
+  name: Enemy
   health: 3
   drops:
   - {fileID: 11400000, guid: 5c3c3082e1c14f2499eb6ace4756a261, type: 2}
-  damage: 1
+  damage: 5
   speed: 6
   isArmored: 0
   armor: 0
+  chargeSpeed: 0
+  chargeDamage: 0
   aggroDistance: 8
   attackDistance: 3

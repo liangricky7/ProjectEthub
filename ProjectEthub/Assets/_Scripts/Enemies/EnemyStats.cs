@@ -13,6 +13,7 @@ public class EnemyStats : ScriptableObject
     public float armor;
     [Header("Charging")]
     public float chargeSpeed;
+    public float chargeDamage;
     [Header("Zoning")]
     public float aggroDistance;
     public float attackDistance;

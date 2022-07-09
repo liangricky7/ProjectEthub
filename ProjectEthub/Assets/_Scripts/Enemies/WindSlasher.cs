@@ -20,7 +20,7 @@ public class WindSlasher: Enemy
             health -= damage;
             nextTimeCanDamage = Time.time + iFrameLength;
         }
-        if (health == 0) {
+        if (health <= 0) {
             Die();
         }
     }

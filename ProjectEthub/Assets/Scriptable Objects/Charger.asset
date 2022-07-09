@@ -14,12 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Charger
   health: 20
-  drops: []
+  drops:
+  - {fileID: 11400000, guid: 5c3c3082e1c14f2499eb6ace4756a261, type: 2}
   damage: 10
   speed: 5
   isArmored: 0
   armor: 0
   chargeSpeed: 10
   chargeDamage: 20
-  aggroDistance: 15
-  attackDistance: 14
+  aggroDistance: 8
+  attackDistance: 5

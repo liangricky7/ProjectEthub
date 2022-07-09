@@ -30,7 +30,7 @@ public class WindSlasherActions : MonoBehaviour
         speed = stats.speed;
         target = PlayerManager.instance.player;
 
-        patrolZone = new Bounds(patrolZoneObject.transform.position, patrolZoneObject.GetComponent<BoxCollider2D>().size);
+        //patrolZone = new Bounds(patrolZoneObject.transform.position, patrolZoneObject.GetComponent<BoxCollider2D>().size);
 
         aggroDistance = stats.aggroDistance;
         attackDistance = stats.attackDistance;

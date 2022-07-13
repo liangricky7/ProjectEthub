@@ -97,4 +97,8 @@ public class Inventory : MonoBehaviour {
             }
         }
     }
+
+    public void UIOpen() {
+        onItemChangedCallback.Invoke();
+    }
 }

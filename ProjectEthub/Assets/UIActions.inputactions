@@ -15,24 +15,6 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Map",
-                    "type": "Button",
-                    "id": "57eb4643-188f-4085-a346-7f672b249457",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Quest",
-                    "type": "Button",
-                    "id": "0c9d9622-f0da-4bd0-9d6c-a7ef17873918",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "EscapeMenu",
                     "type": "Button",
                     "id": "be39126c-edde-4a6f-b814-bcb7640d6f3a",
@@ -51,28 +33,6 @@
                     "processors": "",
                     "groups": "",
                     "action": "Inventory",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "10f29b3c-f625-4885-a525-22335fc8ed98",
-                    "path": "<Keyboard>/m",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Map",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "151128d4-ced7-4b68-8167-f614ac1e732f",
-                    "path": "<Keyboard>/o",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Quest",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

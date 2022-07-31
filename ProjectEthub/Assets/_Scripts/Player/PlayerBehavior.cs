@@ -4,7 +4,7 @@ public class PlayerBehavior : MonoBehaviour
 {
     public float health = 100;
 
-    private void Awake() {
+    private void Start() {
         UIElementManager.instance.HealthBar.GetComponent<HealthBar>().SetMaxHealth(health);
     }
     

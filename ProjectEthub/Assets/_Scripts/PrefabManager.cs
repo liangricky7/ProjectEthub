@@ -13,4 +13,5 @@ public class PrefabManager : MonoBehaviour
     #endregion
 
     public GameObject ItemPickup;
+    public GameObject[] Weapons;
 }

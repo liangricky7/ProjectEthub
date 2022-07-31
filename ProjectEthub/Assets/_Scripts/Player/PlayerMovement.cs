@@ -60,6 +60,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
     public void InitDash() {
+        Debug.Log("enter dash cmd");
         if (canDash) {
             Debug.Log("dashing");
             StartCoroutine(Dash());

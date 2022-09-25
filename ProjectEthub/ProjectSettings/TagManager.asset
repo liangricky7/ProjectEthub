@@ -6,6 +6,7 @@ TagManager:
   tags:
   - UI
   - Wall
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -43,9 +44,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: UI Primary
-    uniqueID: 431484625
-    locked: 0
   - name: Ground
     uniqueID: 2582173869
+    locked: 0
+  - name: Enemies
+    uniqueID: 1255913593
+    locked: 0
+  - name: UI Primary
+    uniqueID: 431484625
     locked: 0

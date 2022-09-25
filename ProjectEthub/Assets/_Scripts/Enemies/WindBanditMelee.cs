@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class WindSlasher: Enemy
+public class WindBanditMelee: Enemy
 {
     public EnemyStats stats;
     private float iFrameLength;

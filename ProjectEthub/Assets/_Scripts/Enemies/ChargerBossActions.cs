@@ -16,6 +16,7 @@ public class ChargerBossActions : MonoBehaviour {
     private float attackDistance;
 
     private bool isInAttack;
+    private bool isInChase;
     private Coroutine currCo;
     void Start() {
         stats = gameObject.GetComponent<Charger>().stats;
@@ -34,8 +35,13 @@ public class ChargerBossActions : MonoBehaviour {
     void Update() {
         distanceFromTarget = Vector3.Distance(transform.position, target.transform.position);
         if (!isInAttack && distanceFromTarget <= attackDistance) {
+            ReturnToIdle(); //resets isInChase
             EnterAttack();
         } else if (!isInAttack && distanceFromTarget <= aggroDistance) {
+            if (!isInChase) {
+                isInChase = true;
+                anim.SetBool("isChase", true);
+            }
             Chase();
         }
     }
@@ -44,11 +50,15 @@ public class ChargerBossActions : MonoBehaviour {
 
     }
 
+    private void EnterChase() {
+    
+    }
     private void Chase() {
         transform.position = Vector2.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
     }
 
     public void EnterAttack() {
+        anim.SetBool("isChase", false);
         isInAttack = true;
         anim.SetTrigger("EnterWindUp");
     }
@@ -67,17 +77,38 @@ public class ChargerBossActions : MonoBehaviour {
         }
     }
 
+    public void EnterStun() {
+        rb.velocity = Vector2.zero;
+        anim.SetTrigger("EnterStun");
+        anim.SetBool("Stun", true);
+        StartCoroutine(Stun());
+    }
+    IEnumerator Stun() {
+        yield return new WaitForSeconds(2);
+        anim.SetBool("Stun", false);
+        ReturnToIdle();
+    }
     private void OnCollisionEnter2D(Collision2D collision) {
-        StopCoroutine(currCo);
-        anim.SetBool("IsCharging", false);
-        if (collision.collider.tag == "Player") {
-            target.gameObject.GetComponent<PlayerBehavior>().TakeDamage(stats.chargeDamage);
-            ReturnToIdle();
+        if (currCo != null) {
+            StopCoroutine(currCo);
         }
-        if (collision.collider.tag == "Wall") {
-            anim.SetTrigger("Stun");
+        if (anim.GetBool("IsCharging")) {
+            if (collision.collider.tag == "Enemy") {
+                return;
+            } 
+            Debug.Log("enter charge collision");
+            anim.SetBool("IsCharging", false);
+            if (collision.collider.tag == "Player") {
+                Debug.Log("player hit!");
+                target.gameObject.GetComponent<PlayerBehavior>().TakeDamage(stats.chargeDamage);
+                ReturnToIdle();
+            }
+            if (collision.collider.tag == "Wall") {
+                EnterStun();
+            }
+            //Debug.Log("collided");
         }
-        //Debug.Log("collided");
+
     }
 
     private void BackOff() {
@@ -85,6 +116,8 @@ public class ChargerBossActions : MonoBehaviour {
     }
 
     public void ReturnToIdle() {
+        rb.velocity = Vector2.zero;
+        isInChase = false;
         isInAttack = false;
         anim.SetTrigger("ReturnToIdle");
     }

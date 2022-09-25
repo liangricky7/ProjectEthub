@@ -2,7 +2,7 @@ using System.Collections;
 
 using UnityEngine;
 
-public class WindSlasherActions : MonoBehaviour
+public class WindBanditMeleeActions : MonoBehaviour
 {
     private EnemyStats stats;
 
@@ -25,7 +25,7 @@ public class WindSlasherActions : MonoBehaviour
     private Coroutine currCo;
     void Start()
     {
-        stats = gameObject.GetComponent<WindSlasher>().stats;
+        stats = gameObject.GetComponent<WindBanditMelee>().stats;
 
         speed = stats.speed;
         target = PlayerManager.instance.player;

@@ -1,9 +1,10 @@
 using UnityEngine;
 
-public class Archer : Enemy {
+public class Mage : Enemy {
     public EnemyStats stats;
     private float iFrameLength;
     private float nextTimeCanDamage;
+    [HideInInspector]
     public float health;
     private GameObject itemPickup;
 

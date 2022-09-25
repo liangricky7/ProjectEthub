@@ -2,8 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerMovement : MonoBehaviour
-{
+public class PlayerMovement : MonoBehaviour {
     private Rigidbody2D rb;
     private float speed;
 
@@ -29,16 +28,14 @@ public class PlayerMovement : MonoBehaviour
         playerControls.Disable();
     }
 
-    void Start()
-    {
+    void Start() {
         rb = gameObject.GetComponent<Rigidbody2D>();
         speed = 10f;
         cam = Camera.main;
         render = GameObject.Find("PlayerModel").GetComponent<SpriteRenderer>();
     }
 
-    void Update()
-    {
+    void Update() {
         direction = playerControls.ReadValue<Vector2>();
 
         mousePos = cam.ScreenToWorldPoint(Mouse.current.position.ReadValue());
@@ -47,7 +44,8 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void FixedUpdate() {
-        if (!isDashing) rb.velocity = direction * speed;
+        if (!isDashing)
+            rb.velocity = direction * speed;
     }
 
     private void Look() {
@@ -75,5 +73,8 @@ public class PlayerMovement : MonoBehaviour
         isDashing = false;
         yield return new WaitForSeconds(dashCD);
         canDash = true;
+    }
+    private void OnCollisionEnter2D(Collision2D collision) {
+        Physics2D.IgnoreCollision(gameObject.GetComponentInChildren<BoxCollider2D>(), collision.collider.GetComponent<BoxCollider2D>(), true);
     }
 }

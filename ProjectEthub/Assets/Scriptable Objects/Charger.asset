@@ -18,7 +18,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5c3c3082e1c14f2499eb6ace4756a261, type: 2}
   damage: 10
   speed: 5
-  isArmored: 0
+  attackCooldown: 2
   armor: 0
   chargeSpeed: 20
   chargeDamage: 20

@@ -74,7 +74,4 @@ public class PlayerMovement : MonoBehaviour {
         yield return new WaitForSeconds(dashCD);
         canDash = true;
     }
-    private void OnCollisionEnter2D(Collision2D collision) {
-        Physics2D.IgnoreCollision(gameObject.GetComponentInChildren<BoxCollider2D>(), collision.collider.GetComponent<BoxCollider2D>(), true);
-    }
 }

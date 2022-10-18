@@ -7,6 +7,7 @@ TagManager:
   - UI
   - Wall
   - Enemy
+  - EnemyProjectile
   layers:
   - Default
   - TransparentFX
@@ -19,7 +20,7 @@ TagManager:
   - Items
   - Wall
   - Floor
-  - 
+  - Enemy Projectiles
   - 
   - 
   - 
@@ -47,8 +48,14 @@ TagManager:
   - name: Ground
     uniqueID: 2582173869
     locked: 0
-  - name: Enemies
+  - name: Pickups
+    uniqueID: 1040057043
+    locked: 0
+  - name: Enemies, NPC, Player
     uniqueID: 1255913593
+    locked: 0
+  - name: Projectile
+    uniqueID: 3067520783
     locked: 0
   - name: UI Primary
     uniqueID: 431484625

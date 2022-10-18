@@ -8,8 +8,8 @@ public class EnemyStats : ScriptableObject
     public Item[] drops;
     public float damage;
     public float speed;
+    public float attackCooldown;
     [Header("Armor")]
-    public bool isArmored;
     public float armor;
     [Header("Charging")]
     public float chargeSpeed;
